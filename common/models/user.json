@@ -23,8 +23,7 @@
       "model": "world",
       "foreignKey": "",
       "options": {
-        "nestRemoting": true,
-        "disableInclude": true
+        "nestRemoting": true
       }
     }
   },
@@ -36,6 +35,6 @@
       "permission": "ALLOW",
       "property": "find"
     }
-],
+  ],
   "methods": {}
 }
