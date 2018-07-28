@@ -2,5 +2,33 @@
   "db": {
     "name": "db",
     "connector": "memory"
+  },
+  "mongodb": {
+    "port": 27017,
+    "url": "",
+    "database": "world",
+    "password": "",
+    "name": "mongodb",
+    "user": "",
+    "connector": "mongodb"
+  },
+  "emails": {
+    "name": "emails",
+    "connector": "mail",
+    "transports": [
+      {
+        "type": "SMTP",
+        "host": "smtp.gmail.es",
+        "secure": false,
+        "port": 587,
+        "tls": {
+          "rejectUnauthorized": false
+        },
+        "auth": {
+          "user": "your@email.es",
+          "pass": "YourPassword123"
+        }
+      }
+    ]
   }
 }
