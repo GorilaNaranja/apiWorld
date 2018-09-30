@@ -1,31 +1,27 @@
 var app = require('../../server/server');
 var User = app.models.User;
-
+var Role = app.models.Role;
 
 User.create([
-    {username: 'John', email: 'john@doe.com', password: '123456'},
-    {username: 'Jane', email: 'jane@doe.com', password: '123456'},
-    {username: 'Bob', email: 'bob@projects.com', password: '123456'}
+  {username: 'Felipe', email: 'felipe@test.com', password: '123456'},
+  {username: 'Diego', email: 'diego@test.com', password: '123456'},
+  {username: 'Alberto', email: 'alberto@test.com', password: '123456'},
 ], function(err, users) {
-    if (err) return debug('%j', err);
-    //...
-    // Create projects, assign project owners and project team members
-    //...
-    // Create the admin role
-    Role.create({
-      name: 'admin'
-    }, function(err, role) {
-      if (err) return debug(err);
-      debug(role);
+  if (err) return;
 
-      // Make Bob an admin
-      role.principals.create({
-        principalType: RoleMapping.USER,
-        principalId: users[2].id
-      }, function(err, principal) {
-        if (err) return debug(err);
-        debug(principal);
-      });
+  Role.create({
+    name: 'admin',
+  }, function(err, role) {
+    if (err) return;
+    console.log(role);
+
+    // Make Bob an admin
+    role.principals.create({
+      principalType: RoleMapping.USER,
+      principalId: users[2].id,
+    }, function(err, principal) {
+      if (err) return;
+      console.log(principal);
     });
-
   });
+});
