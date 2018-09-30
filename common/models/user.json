@@ -1,39 +1,43 @@
 {
   "name": "user",
   "plural": "users",
-  "base": "PersistedModel",
+  "base": "User",
   "idInjection": true,
   "options": {
-    "validateUpsert": true
+    "validateUpsert": true,
+    "emailVerificationRequired": false
   },
+  "mixins": {
+    "Timestamp": {
+      "myOption": 1
+      }
+    },
   "properties": {
+    "username": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "string",
+      "required": true
+    },
     "created_date": {
       "type": "date",
-      "required": true
+      "required": false
     },
     "world_id": {
       "type": "string",
-      "required": true
+      "required": false
     }
   },
   "validations": [],
-  "relations": {
-    "worlds": {
-      "type": "hasOne",
-      "model": "world",
-      "foreignKey": "",
-      "options": {
-        "nestRemoting": true
-      }
-    }
-  },
+  "relations": {},
   "acls": [
     {
-      "accessType": "READ",
+      "accessType": "*",
       "principalType": "ROLE",
-      "principalId": "admin",
-      "permission": "ALLOW",
-      "property": "find"
+      "principalId": "$everyone",
+      "permission": "ALLOW"
     }
   ],
   "methods": {}
