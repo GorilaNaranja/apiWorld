@@ -15,7 +15,7 @@
   },
   "User": {
     "dataSource": "mongodb",
-    "public": true,
+    "public": false,
     "options": {
       "emailVerificationRequired": true
     }
@@ -38,10 +38,6 @@
   "Role": {
     "dataSource": "mongodb",
     "public": false
-  },
-  "world": {
-    "dataSource": "mongodb",
-    "public": true
   },
   "user": {
     "dataSource": "mongodb",
