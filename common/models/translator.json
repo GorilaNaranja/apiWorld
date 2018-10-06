@@ -1,0 +1,32 @@
+{
+  "name": "translator",
+  "plural": "translators",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "Timestamp": {
+      "myOption": 1
+    }
+  },
+  "properties": {
+    "username": {
+      "type": "string",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
