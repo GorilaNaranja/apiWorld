@@ -10,8 +10,8 @@
   "mixins": {
     "Timestamp": {
       "myOption": 1
-      }
-    },
+    }
+  },
   "properties": {
     "username": {
       "type": "string",
@@ -20,18 +20,19 @@
     "email": {
       "type": "string",
       "required": true
-    },
-    "created_date": {
-      "type": "date",
-      "required": false
-    },
-    "world_id": {
-      "type": "string",
-      "required": false
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "translationRequests": {
+      "type": "hasMany",
+      "model": "translationRequest",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
   "acls": [
     {
       "accessType": "*",
